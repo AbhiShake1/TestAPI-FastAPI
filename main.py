@@ -14,5 +14,10 @@ def hello():
     return data
 
 
+@app.get('/api/{req}')
+def handle(req):
+    return {'data': req}
+
+
 if __name__ == "__main__":
     uvicorn.run("main:app", reload=True)
